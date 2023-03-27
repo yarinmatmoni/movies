@@ -1,23 +1,29 @@
 import React from "react";
 import styles from "./movieCard.module.scss";
+import Image from "next/image";
+import { baseImageUrl } from '../../utils/urls';
 
 function movieCard({
   title,
   overview,
   releaseDate,
   voteAverage,
-  image,
+  imagePath,
 }: {
   title: string;
   overview: string;
   releaseDate: string;
   voteAverage: number;
-  image: string | null;
+  imagePath: string | null;
 }) {
+
   return (
     <div className={styles.movieCardContainer}>
+      <Image src={baseImageUrl + imagePath} alt={title} height={50} width={50}></Image>
       <h1>{title}</h1>
+      <p>{releaseDate}</p>
       <p>{overview}</p>
+      <p>{voteAverage}</p>
     </div>
   );
 }

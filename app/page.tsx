@@ -1,5 +1,6 @@
 import styles from "./page.module.scss";
 import MovieCard from "../components/movieCard/movieCard";
+import { baseApiUrl } from '../utils/urls';
 
 export const metadata = {
   title: "Movies App | inManage",
@@ -7,7 +8,7 @@ export const metadata = {
 
 export default async function Home() {
   const data = await fetch(
-    `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`
+    `${baseApiUrl}/movie/popular?api_key=${process.env.API_KEY}`
   );
   const { results } = await data.json();
   return (
@@ -20,7 +21,7 @@ export default async function Home() {
           overview={movie.overview}
           releaseDate={movie.release_date}
           voteAverage={movie.vote_average}
-          image={movie.poster_path}
+          imagePath={movie.poster_path}
         />
       ))}
     </div>
