@@ -20,7 +20,7 @@ function movieCard({
   return (
     <div className={styles.movieCardContainer}>
       <Image src={baseImageUrl + imagePath} alt={title} height={50} width={50}></Image>
-      <h1>{title}</h1>
+      <h2>{title}</h2>
       <p>{releaseDate}</p>
       <p>{overview}</p>
       <p>{voteAverage}</p>

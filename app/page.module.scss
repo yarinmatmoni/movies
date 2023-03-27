@@ -1,2 +1,23 @@
+@import '../public/colors.scss';
+
 .homePageContainer {
+	.titles {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		p {
+			font-size: 25px;
+			color: $secondary-color;
+			font-weight: bold;
+		}
+	}
+
+	.moviesContainer {
+		margin-top: 80px;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+		grid-gap: 30px;
+	}
 }
