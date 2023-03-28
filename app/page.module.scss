@@ -13,11 +13,4 @@
 			font-weight: bold;
 		}
 	}
-
-	.moviesContainer {
-		margin-top: 80px;
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-		grid-gap: 30px;
-	}
 }
