@@ -5,16 +5,14 @@ import Link from "next/link";
 import { baseImageUrl } from '../../utils/urls';
 
 function movieCard({
+  id,
   title,
-  overview,
   releaseDate,
-  voteAverage,
   imagePath,
 }: {
+  id: string,
   title: string;
-  overview: string;
   releaseDate: string;
-  voteAverage: number;
   imagePath: string | null;
 }) {
 
@@ -23,20 +21,18 @@ function movieCard({
       <div className={styles.info}>
         <h2>{title}</h2>
         <p>{releaseDate}</p>
-        {/* <p>{overview}</p>
-        <p>{voteAverage}</p> */}
       </div>
-      <div className={styles.imageContainer}>
-        <Link href={'/'}>
+      <Link href={`/${id}`}>
+        <div className={styles.imageContainer}>
           <Image
             src={baseImageUrl + imagePath}
             alt={title}
             fill
             priority
           ></Image>
-        </Link>
-      </div>
-    </div>
+        </div>
+      </Link >
+    </div >
   );
 }
 
