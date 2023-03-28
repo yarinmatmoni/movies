@@ -28,9 +28,9 @@ async function MovieDetails({ params }: any) {
         </div>
         <div className={styles.item}>
           <Image src={Star} height={17} width={17} alt='star' />
-          <p>{results.vote_average.toFixed(1)} / 10</p>
+          <p>{results.vote_average?.toFixed(1)} / 10</p>
         </div>
-        <div className={styles.status}>
+        <div className={styles.status} data-status={results.status}>
           <p>{results.status}</p>
         </div>
       </div>

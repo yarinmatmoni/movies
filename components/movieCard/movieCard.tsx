@@ -28,7 +28,6 @@ function movieCard({
             src={baseImageUrl + imagePath}
             alt={title}
             fill
-            priority
           ></Image>
         </div>
       </Link >

@@ -1,3 +1,6 @@
+@import '../../public/function.scss';
+@import '../../public/colors.scss';
+
 .movieDetailsContainer {
 	.header {
 		h1 {
@@ -18,9 +21,13 @@
 		.status {
 			margin-top: 8px;
 			display: inline-block;
-			background-color: green;
+			background-color: $danger-color;
 			padding: 6px;
 			border-radius: 3px;
+
+			&[data-status='Released'] {
+				background-color: $success-color;
+			}
 
 			p {
 				font-size: 12px;
@@ -37,6 +44,27 @@
 
 		img {
 			object-fit: cover;
+			object-position: center;
+		}
+	}
+}
+
+@include desktop {
+	.movieDetailsContainer {
+		.header {
+			h1 {
+				font-size: 50px;
+			}
+
+			p {
+				font-size: 18px;
+			}
+		}
+
+		.status {
+			p {
+				font-size: 16px !important;
+			}
 		}
 	}
 }
