@@ -1,0 +1,30 @@
+@import '../../public/colors.scss';
+
+.movieCardContainer {
+	.imageContainer {
+		position: relative;
+		height: 400px;
+		width: 100%;
+		overflow: hidden;
+
+		img {
+			transition: all 0.7s ease-in-out;
+
+			&:hover {
+				transform: scale(1.1);
+				filter: grayscale(80%);
+			}
+		}
+	}
+
+	.info {
+		h2 {
+			font-size: 16px;
+		}
+
+		p {
+			font-size: 13px;
+			font-weight: bold;
+		}
+	}
+}
