@@ -8,9 +8,9 @@ import { baseApiUrl, baseImageUrl } from '../../utils/urls';
 
 async function MovieDetails({ params }: any) {
 
-  const { movie } = params;
+  const { movieId } = params;
   const fetchData = await fetch(
-    `${baseApiUrl}/movie/${movie}?api_key=${process.env.API_KEY}`
+    `${baseApiUrl}/movie/${movieId}?api_key=${process.env.API_KEY}`
   );
   const results = await fetchData.json();
 
