@@ -9,6 +9,9 @@ export default async function Home() {
   );
   const { results } = await fetchData.json();
 
+  // Sort by date
+  // const sortedData = results.sort((a: any, b: any) => new Date(a.release_date).getTime() - new Date(b.release_date).getTime()); 
+
   return (
     <div className={styles.homePageContainer}>
       <div className={styles.titles}>
