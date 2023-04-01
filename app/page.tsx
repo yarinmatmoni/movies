@@ -4,7 +4,7 @@ import { baseApiUrl } from '../utils/urls';
 
 const Home = async () => {
   const fetchData = await fetch(
-    `${baseApiUrl}/movie/popular?api_key=${process.env.API_KEY}`
+    `${baseApiUrl}/movie/popular?api_key=${process.env.API_KEY}&page=1`
   );
   const { results } = await fetchData.json();
 
