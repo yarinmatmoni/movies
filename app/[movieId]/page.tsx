@@ -5,8 +5,9 @@ import Clock from '../../public/svg/clockSvg.svg';
 import Date from '../../public/svg/dateSvg.svg';
 import Star from '../../public/svg/starSvg.svg';
 import { baseApiUrl, baseImageUrl } from '../../utils/urls';
+import { movieIdType } from '../../types/types';
 
-async function MovieDetails({ params }: any) {
+async function MovieDetails({ params }: movieIdType) {
 
   const { movieId } = params;
   const fetchData = await fetch(
