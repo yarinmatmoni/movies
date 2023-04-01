@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { baseImageUrl } from '../../utils/urls';
 
-function movieCard({
+const movieCard = ({
   id,
   title,
   releaseDate,
@@ -14,25 +14,22 @@ function movieCard({
   title: string;
   releaseDate: string;
   imagePath: string | null;
-}) {
+}) =>
 
-  return (
-    <div className={styles.movieCardContainer}>
-      <div className={styles.info}>
-        <h2>{title}</h2>
-        <p>{releaseDate}</p>
+  <div className={styles.movieCardContainer}>
+    <div className={styles.info}>
+      <div className={styles.title}>{title}</div>
+      <div className={styles.releaseDate}>{releaseDate}</div>
+    </div>
+    <Link href={`/${id}`}>
+      <div className={styles.imageContainer}>
+        <Image
+          src={baseImageUrl + imagePath}
+          alt={title}
+          fill
+        ></Image>
       </div>
-      <Link href={`/${id}`}>
-        <div className={styles.imageContainer}>
-          <Image
-            src={baseImageUrl + imagePath}
-            alt={title}
-            fill
-          ></Image>
-        </div>
-      </Link >
-    </div >
-  );
-}
+    </Link >
+  </div >
 
 export default movieCard;

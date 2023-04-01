@@ -8,10 +8,6 @@
 			margin-bottom: 8px;
 		}
 
-		p {
-			font-size: 14px;
-		}
-
 		.item {
 			display: flex;
 			gap: 8px;
@@ -29,8 +25,7 @@
 				background-color: $success-color;
 			}
 
-			p {
-				font-size: 12px;
+			.statusData {
 				color: white;
 			}
 		}
@@ -56,13 +51,13 @@
 				font-size: 50px;
 			}
 
-			p {
+			.itemData {
 				font-size: 18px;
 			}
 		}
 
 		.status {
-			p {
+			.statusData {
 				font-size: 16px !important;
 			}
 		}

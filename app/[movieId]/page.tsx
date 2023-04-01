@@ -7,7 +7,7 @@ import Star from '../../public/svg/starSvg.svg';
 import { baseApiUrl, baseImageUrl } from '../../utils/urls';
 import { movieIdType } from '../../types/types';
 
-async function MovieDetails({ params }: movieIdType) {
+const MovieDetails = async ({ params }: movieIdType) => {
 
   const { movieId } = params;
   const fetchData = await fetch(
@@ -21,18 +21,18 @@ async function MovieDetails({ params }: movieIdType) {
         <h1>{results.title}</h1>
         <div className={styles.item}>
           <Image src={Date} height={17} width={17} alt='date' />
-          <p>{results.release_date}</p>
+          <div className={styles.itemData}>{results.release_date}</div>
         </div>
         <div className={styles.item}>
           <Image src={Clock} height={17} width={17} alt='clock' />
-          <p>{results.runtime} minutes</p>
+          <div className={styles.itemData}>{results.runtime} minutes</div>
         </div>
         <div className={styles.item}>
           <Image src={Star} height={17} width={17} alt='star' />
-          <p>{results.vote_average?.toFixed(1)} / 10</p>
+          <div className={styles.itemData}>{results.vote_average?.toFixed(1)} / 10</div>
         </div>
         <div className={styles.status} data-status={results.status}>
-          <p>{results.status}</p>
+          <p className={styles.statusData}>{results.status}</p>
         </div>
       </div>
       <div className={styles.imageContainer}>
@@ -43,7 +43,7 @@ async function MovieDetails({ params }: movieIdType) {
           priority
         />
       </div>
-      <p>{results.overview}</p>
+      <div>{results.overview}</div>
     </div>
   )
 }

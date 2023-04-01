@@ -17,11 +17,12 @@
 	}
 
 	.info {
-		h2 {
+		.title {
 			font-size: 16px;
+			font-weight: bold;
 		}
 
-		p {
+		.releaseDate {
 			font-size: 13px;
 		}
 	}
